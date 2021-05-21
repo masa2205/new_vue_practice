@@ -1,6 +1,14 @@
 var app = new Vue ({
     el: '#app',
     data: {
-        file: null
+        name: 'masa'
+    },
+    methods: {
+        someFunc: function() {
+            this.hello();
+        },
+        hello: function() {
+            alert('Hello, ' + this.name)
+        }
     }
 })
