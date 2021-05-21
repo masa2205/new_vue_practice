@@ -15,10 +15,8 @@
 <body>
     <div id='app' v-cloak>
         <h1>Welcome to Vue</h1>
-        <p v-if="messages.count > 0">
-            You have {{ messages.count }} messages.
-        </p>
-        <p v-else> No message.</p>
+        <input type="file" v-model="file" >
+        <p>{{ file }}</p>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="app.js"></script>
