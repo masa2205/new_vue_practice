@@ -1,8 +1,6 @@
 var app = new Vue ({
     el: '#app',
     data: {
-        messages: {
-            count: 2
-        }
+        file: null
     }
 })
