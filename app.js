@@ -1,14 +1,10 @@
-var app = new Vue ({
+const vm = new Vue ({
     el: '#app',
-    data: {
-        name: 'masa'
-    },
-    methods: {
-        someFunc: function() {
-            this.hello();
-        },
-        hello: function() {
-            alert('Hello, ' + this.name)
+    data() {
+        return {
+            sum: 3000000
         }
     }
 })
+
+window.vm = vm
