@@ -14,7 +14,8 @@
 </head>
 <body>
     <div id='app' v-cloak>
-        <p>合計　{{ sum }}　円</p>
+        <p>{{ foo }}</p>
+        <button v-on:click="foo='baz'">change it</button>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="app.js"></script>

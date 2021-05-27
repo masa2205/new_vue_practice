@@ -1,10 +1,10 @@
-const vm = new Vue ({
-    el: '#app',
-    data() {
-        return {
-            sum: 3000000
-        }
-    }
-})
+var obj = {
+    foo: 'bar'
+}
 
-window.vm = vm
+Object.freeze(obj)
+
+new Vue ({
+    el: '#app',
+    data: obj
+})
