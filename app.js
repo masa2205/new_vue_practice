@@ -6,5 +6,12 @@ Object.freeze(obj)
 
 new Vue ({
     el: '#app',
-    data: obj
+    data: {
+        message: 'Hello'
+    },
+    computed: {
+        reversedMessage: function (){
+            return this.message.split('').reverse().join('')
+        }
+    }
 })
