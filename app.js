@@ -6,12 +6,15 @@ Object.freeze(obj)
 
 new Vue ({
     el: '#app',
-    data: {
-        message: 'Hello'
+    data() {
+        return {
+            button_disabled: false
+        }
     },
     computed: {
-        reversedMessage: function (){
-            return this.message.split('').reverse().join('')
+        button_label() {
+            console.log('button_disabled called')
+            return this.button_disabled ? '無効' : '有効'
         }
     }
 })
