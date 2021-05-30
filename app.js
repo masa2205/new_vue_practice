@@ -7,16 +7,23 @@ Object.freeze(obj)
 new Vue ({
     el: '#app',
     data: {
-        todos: [
-            {text:"vue",done:false},
-            {text:"react",done:false},
-            {text:"html",done:false},
-            {text:"css",done:false}
-        ]
+        name:'山田',
+        email:'user1@example.jp',
+        text:'xxxxについて'
     },
     methods: {
-        toggle: function(todo){
-            todo.done = !todo.done
+        submit() {
+        const inquiry = `
+            次の問い合わせ内容を送信しました。
+
+            「名前」
+            ${this.name}
+            「メールアドレス」
+            ${this.email}
+            「お問い合わせ内容」
+            ${this.text}
+        `
+        alert(inquiry)
         }
     }
 }) 
