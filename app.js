@@ -4,13 +4,16 @@ var obj = {
 
 Object.freeze(obj)
 
-Vue.component('list-title',{
+const ListTitle = {
     template: `
         <h2>ユーザーリスト</h2>
     `
-})
+}
 
 Vue.component('user-list', {
+    component: {
+        'list-title': ListTitle
+    },
     data() {
         return {
             users: [
