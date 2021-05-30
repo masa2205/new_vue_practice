@@ -8,15 +8,7 @@ new Vue ({
     el: '#app',
     data() {
         return {
-            message: "Hello, World!"
-        }
-    },
-    methods: {
-        clickLog() {
-            alert(this.message)
-        },
-        hoverLog() {
-            console.log('hover')
+            reverse: false
         }
     }
 })

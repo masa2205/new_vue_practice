@@ -14,7 +14,14 @@
 </head>
 <body>
     <div id='app' v-cloak>
-        <button @click='clickLog' @mouseenter='hoverLog'></button>
+        <div>
+            <label>
+                <input type="checkbox" v-model='reverse'>予約する
+            </label>
+        </div>
+        <div v-if='reverse'>
+            予約日:<input type='date'>
+        </div>
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
