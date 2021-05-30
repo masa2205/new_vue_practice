@@ -4,6 +4,12 @@ var obj = {
 
 Object.freeze(obj)
 
+Vue.component('list-title',{
+    template: `
+        <h2>ユーザーリスト</h2>
+    `
+})
+
 Vue.component('user-list', {
     data() {
         return {
@@ -17,11 +23,14 @@ Vue.component('user-list', {
         }
     },
     template: `
-    <ul>
-        <li v-for="user in users" :key="user.id">
-            {{ user.name }}
-        </li>
-    </ul>
+    <div>
+        <list-title></list-title>
+        <ul>
+            <li v-for="user in users" :key="user.id">
+                {{ user.name }}
+            </li>
+        </ul>
+    </div>    
     `
 })
 
