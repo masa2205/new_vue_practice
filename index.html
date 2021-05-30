@@ -14,9 +14,16 @@
 </head>
 <body>
     <div id='app' v-cloak>
-        <div v-if='message'>{{ message }}</div>
-        <div v-else-if="message === ''">メッサージが空です</div>
-        <div v-else>メッサージがありません</div>
+        <h2>Todos</h2>
+        <ol>
+            <li v-for='todo in todos'>
+                <label>
+                    <input type="checkbox" @change=toggle(todo) :checked='todo.done'>
+                    <del v-if='todo.done'>{{ todo.text }}</del>
+                    <span v-else>{{ todo.text }}</span>
+                </label>
+            </li>
+        </ol>
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
