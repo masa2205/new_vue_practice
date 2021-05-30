@@ -8,13 +8,15 @@ new Vue ({
     el: '#app',
     data() {
         return {
-            button_disabled: false
+            message: "Hello, World!"
         }
     },
-    computed: {
-        button_label() {
-            console.log('button_disabled called')
-            return this.button_disabled ? '無効' : '有効'
+    methods: {
+        clickLog() {
+            alert(this.message)
+        },
+        hoverLog() {
+            console.log('hover')
         }
     }
 })
