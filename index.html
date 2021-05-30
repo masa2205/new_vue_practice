@@ -16,7 +16,7 @@
     <div id='app' v-cloak>
         <h2>Todos</h2>
         <ol>
-            <li v-for='todo in todos'>
+            <li v-for='todo in todos' :key='todo.text'>
                 <label>
                     <input type="checkbox" @change=toggle(todo) :checked='todo.done'>
                     <del v-if='todo.done'>{{ todo.text }}</del>
