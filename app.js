@@ -8,7 +8,7 @@ new Vue ({
     el: '#app',
     data() {
         return {
-            reverse: false
+            message: 'こんにちは'
         }
     }
-})
+}) 
