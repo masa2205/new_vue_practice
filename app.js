@@ -4,15 +4,27 @@ var obj = {
 
 Object.freeze(obj)
 
-new Vue ({
-    el: '#app',
-    template: `
-        <div v-if='message'>{{ message }}</div>
-        <div v-else>メッセージがありません</div>
-    `,
+Vue.component('user-list', {
     data() {
         return {
-            message: 'こんにちは'
+            users: [
+                {id:1,name:'ユーザー1'},
+                {id:2,name:'ユーザー2'},
+                {id:3,name:'ユーザー3'},
+                {id:4,name:'ユーザー4'},
+                {id:5,name:'ユーザー5'},
+            ]
         }
-    }
+    },
+    template: `
+    <ul>
+        <li v-for="user in users" :key="user.id">
+            {{ user.name }}
+        </li>
+    </ul>
+    `
+})
+
+new Vue ({
+    el: '#app',
 }) 
