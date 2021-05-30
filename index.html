@@ -14,10 +14,9 @@
 </head>
 <body>
     <div id='app' v-cloak>
-          <button :disabled="button_disabled">{{ button_label }}</button>
-          <button :disabled="button_disabled">{{ button_label }}</button>
+        <button @click='clickLog' @mouseenter='hoverLog'></button>
     </div>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
 </body>
 </html>
