@@ -12,14 +12,13 @@ const ListTitle = {
 
 const UserDetail = {
     props: {
-        user: {
-            type: Object
-        }
+        user: {type: Object},
+        userName: {type: String}
     },
     template: `
         <div>
             <h2>選択中のユーザー</h2>
-            {{ user.name }}
+            <input v-model='userName'>
         </div>
     `
 }
@@ -51,7 +50,7 @@ const UserList = {
                 {{ user.name }}
             </li>
         </ul>
-        <user-detail :user='selected_user'></user-detail>
+        <user-detail :user='selected_user' :user-name='selected_user.name'></user-detail>
     </div>    
     `
 }
