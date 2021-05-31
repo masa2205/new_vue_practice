@@ -4,60 +4,53 @@ var obj = {
 
 Object.freeze(obj)
 
-const ListTitle = {
-    template: `
-        <h2>ユーザーリスト</h2>
-    `
-}
-
-const UserDetail = {
-    props: {
-        user: {type: Object},
-        userName: {type: String}
-    },
+const UserForm = {
     template: `
         <div>
-            <h2>選択中のユーザー</h2>
-            <input v-model='userName'>
+            <div>ユーザー名変更フォーム</div>
+            <input v-model='user_name'/>
+            <button @click='update'>名前変更</button>
         </div>
-    `
-}
-
-const UserList = {
-    components: {
-        'list-title': ListTitle,
-        'user-detail': UserDetail
+    `,
+    props: {
+        userName: {type: String, required: true}
     },
     data() {
         return {
-            users: [
-                {id:1,name:'ユーザー1'},
-                {id:2,name:'ユーザー2'},
-                {id:3,name:'ユーザー3'},
-                {id:4,name:'ユーザー4'},
-                {id:5,name:'ユーザー5'},
-            ],
-            selected_user: {
-
-            }
+            user_name: this.userName
         }
     },
-    template: `
-    <div>
-        <list-title></list-title>
-        <ul>
-            <li v-for="user in users" :key="user.id" @click='selected_user = user'>
-                {{ user.name }}
-            </li>
-        </ul>
-        <user-detail :user='selected_user' :user-name='selected_user.name'></user-detail>
-    </div>    
+    methods: {
+        update() {
+            this.$emit('update:user-name', this.user_name)
+        }
+    }
+}
+
+const UserDetail = {
+    components: {
+        'user-form': UserForm
+    },
+    data() {
+        return {
+            user_name: 'ヤマダ タロウ'
+        }
+    },
+    template:`
+        <div>
+            <div>
+                <span>ユーザー名: {{ user_name }}</span>
+            </div>
+            <div>
+                <user-form :user-name='user_name' @update:user-name='user_name = $event'></user-form>
+            </div>
+        </div>
     `
 }
 
 new Vue ({
     el: '#app',
     components: {
-        'user-list': UserList
+        'user-detail': UserDetail
     }
 }) 
