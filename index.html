@@ -14,7 +14,14 @@
 </head>
 <body>
     <div id='app' v-cloak>
-        <user-detail></user-detail>
+        <layout>
+            <template slot='header'>Header</template>
+            Main
+            コンテンツ
+            <span slot='footer'>
+                Footer
+            </span>
+        </layout>
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
