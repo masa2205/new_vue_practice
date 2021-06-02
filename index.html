@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mail.css">
+    <link rel="stylesheet" href="main.css">
     <title>Welcome to Vue</title>
     <style>
         [v-cloak] {
@@ -14,14 +14,19 @@
 </head>
 <body>
     <div id='app' v-cloak>
-        <layout>
-            <template slot='header'>Header</template>
-            Main
-            コンテンツ
-            <span slot='footer'>
-                Footer
-            </span>
-        </layout>
+        <h1>My ToDo List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>コメント</th>
+                    <th>状態</th>
+                    <th>-</th>
+                </tr>
+            </thead>
+        </table>
+        <tbody></tbody>
+
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
