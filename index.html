@@ -25,7 +25,18 @@
                 </tr>
             </thead>
         </table>
-        <tbody></tbody>
+        <tbody>
+            <tr v-for="todo in todos" :key=todo.id>
+                <th>{{ todo.id }}</th>
+                <td>{{ todo.title }}</td>
+                <td>
+                    <button>{{ todo.state }}</button>
+                </td>
+                <td>
+                    <button>削除</button>
+                </td>
+            </tr>
+        </tbody>
 
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
