@@ -37,7 +37,11 @@
                 </td>
             </tr>
         </tbody>
-
+        <h2>新しい作業の追加</h2>
+        <form @submit.prevent="todoadd">
+            <input type="text" ref="comment">
+            <button type="submit">追加</button>
+        </form>
     </div>
     <script src="https://unpkg.com/vue">ログ</script>
     <script src="app.js"></script>
