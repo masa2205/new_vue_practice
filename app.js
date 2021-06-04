@@ -1,3 +1,20 @@
+let STORAGE_KEY = 'todos-vuejs-demo'
+let todoStorage = {
+    fetch: function() {
+        var todos = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || '[]'
+        )
+        todos.forEach(function(todo, index) {
+        todo.id = index
+        })
+        todoStorage.uid = todos.length
+        return todos
+    },
+    save: function(todos) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+    }
+}
+
 new Vue ({
     el: '#app',
     data: {
@@ -23,9 +40,9 @@ new Vue ({
             comment=''
         },
         changeState: function(todo) {
-            todo.state = todo.state ? 0 : 1
+            todo.state = !todo.state ? 0 : 1
         },
-        remove: function () {
+        remove: function(todo) {
             let index = this.todos.indexOf(todo)
             this.todos.splice(index,1)
         }
