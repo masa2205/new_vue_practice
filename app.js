@@ -24,5 +24,8 @@ new Vue ({
             },
             deep: true
         }
+    },
+    created() {
+        this.todos = todoStorage.fetch()
     }
 }) 
