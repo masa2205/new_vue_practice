@@ -18,6 +18,7 @@
         <label v-for='label in options'>
             <input type="radio" v-model="current" :value='label.value'>{{ label.label }}
         </label>
+        ({{ computedTodos.length }} 件を表示)
         <table>
             <thead>
                 <tr>
@@ -29,7 +30,7 @@
             </thead>
         </table>
         <tbody>
-            <tr v-for="todo in todos" :key=todo.id>
+            <tr v-for="todo in computedTodos" :key=todo.id>
                 <th>{{ todo.id }}</th>
                 <td>{{ todo.title }}</td>
                 <td>
