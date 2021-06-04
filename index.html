@@ -28,19 +28,19 @@
                     <th>-</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr v-for="todo in computedTodos" :key=todo.id>
+                    <th>{{ todo.id }}</th>
+                    <td>{{ todo.comment }}</td>
+                    <td>
+                        <button @click='changeState(todo)'>{{ labels[todo.state] }}</button>
+                    </td>
+                    <td>
+                        <button @click='remove(todo)'>削除</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
-        <tbody>
-            <tr v-for="todo in computedTodos" :key=todo.id>
-                <th>{{ todo.id }}</th>
-                <td>{{ todo.title }}</td>
-                <td>
-                    <button @click='changeState(todo)'>{{ todo.state }}</button>
-                </td>
-                <td>
-                    <button @click='remove(todo)'>削除</button>
-                </td>
-            </tr>
-        </tbody>
         <h2>新しい作業の追加</h2>
         <form @submit.prevent="doAdd">
             <input type="text" ref="comment">
