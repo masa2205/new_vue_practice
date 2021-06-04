@@ -30,10 +30,10 @@
                 <th>{{ todo.id }}</th>
                 <td>{{ todo.title }}</td>
                 <td>
-                    <button>{{ todo.state }}</button>
+                    <button @click='changeState(todo)'>{{ todo.state }}</button>
                 </td>
                 <td>
-                    <button>削除</button>
+                    <button @click='remove(todo)'>削除</button>
                 </td>
             </tr>
         </tbody>
