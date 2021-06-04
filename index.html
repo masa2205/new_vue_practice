@@ -15,8 +15,8 @@
 <body>
     <div id='app' v-cloak>
         <h1>My ToDo List</h1>
-        <label v-for='label in options'>
-            <input type="radio" v-model="current" :value='label.value'>{{ label.label }}
+        <label v-for="label in options">
+            <input type="radio" v-model="current" :value="label.value">{{ label.label }}
         </label>
         ({{ computedTodos.length }} 件を表示)
         <table>
@@ -29,14 +29,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="todo in computedTodos" :key=todo.id>
+                <tr v-for="todo in computedTodos" :key="todo.id">
                     <th>{{ todo.id }}</th>
                     <td>{{ todo.comment }}</td>
                     <td>
-                        <button @click='changeState(todo)'>{{ labels[todo.state] }}</button>
+                        <button @click="changeState(todo)">{{ labels[todo.state] }}</button>
                     </td>
                     <td>
-                        <button @click='remove(todo)'>削除</button>
+                        <button @click="remove(todo)">削除</button>
                     </td>
                 </tr>
             </tbody>
