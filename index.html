@@ -15,6 +15,9 @@
 <body>
     <div id='app' v-cloak>
         <h1>My ToDo List</h1>
+        <label v-for='label in options'>
+            <input type="radio" v-model="current" :value='label.value'>{{ label.label }}
+        </label>
         <table>
             <thead>
                 <tr>
